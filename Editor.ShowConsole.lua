@@ -4,7 +4,8 @@
 -- When pressed out of Editor it opens the Console, so you can enter any command.
 -- To return back to the Editor, press Ctrl+O again
 --
---
+-- @author: buniak_a_h
+-- @url: https://forum.farmanager.com/viewtopic.php?f=15&t=12501&start=15
 --
 
 local F = far.Flags
