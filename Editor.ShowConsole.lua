@@ -1,4 +1,4 @@
---
+п»ї--
 -- This macro emulates Midnight Commander Editor Ctrl+O shortcut.
 -- 
 -- When pressed out of Editor it opens the Console, so you can enter any command.
@@ -11,15 +11,15 @@
 local Info = package.loaded.regscript or function(...) return ... end
 local nfo = Info {_filename or ...,
   name        = "EditorToCmdLine";
-  description = "BAX: Переключение на область Shell с погашенными панелями для доступа к командной строке";
+  description = "BAX: РџРµСЂРµРєР»СЋС‡РµРЅРёРµ РЅР° РѕР±Р»Р°СЃС‚СЊ Shell СЃ РїРѕРіР°С€РµРЅРЅС‹РјРё РїР°РЅРµР»СЏРјРё РґР»СЏ РґРѕСЃС‚СѓРїР° Рє РєРѕРјР°РЅРґРЅРѕР№ СЃС‚СЂРѕРєРµ";
   version     = "1.0.2"; --http://semver.org/lang/ru/
   author      = "BAX";
   url         = [[https://forum.farmanager.com/viewtopic.php?f=15&t=12501]];
   id          = "97C4C4E9-E729-466A-B8EC-F3B836C608A4";
   idea        = 'ujos (https://forum.farmanager.com/memberlist.php?mode=viewprofile&u=14042)';
   history     = [[
-1.0.1 от 26.06.2021: стартовая версия
-1.0.2 от 27.06.2021: восстановлена реакция на закрытие редактора
+1.0.1 РѕС‚ 26.06.2021: СЃС‚Р°СЂС‚РѕРІР°СЏ РІРµСЂСЃРёСЏ
+1.0.2 РѕС‚ 27.06.2021: РІРѕСЃСЃС‚Р°РЅРѕРІР»РµРЅР° СЂРµР°РєС†РёСЏ РЅР° Р·Р°РєСЂС‹С‚РёРµ СЂРµРґР°РєС‚РѕСЂР°
 ]];
   --parent_id   = "";
   --minfarversion = {3,0,0,4744,0};
@@ -27,12 +27,12 @@ local nfo = Info {_filename or ...,
   --config      = function(nfo,name) end;
   help        = function(nfo,name)
    far.Message(
-'    Макрос работает в немодальном редакторе. По Ctrl+O не просто показывает экран консоли, ' ..
-'а переключает в среду панелей и гасит последние. Это даёт возможность вводить команды ' ..
-'в командную строку.\n\n' ..
-'    Возврат в редактор осуществляется по повторному Ctrl+O или по Esc.\n\n' ..
-'    Если в исходном редакторе есть отмеченный текст, то по клавише Ctrl+V отмеченный текст '..
-'вставляется в командную строку.', 'EditorToCmdLine', nil, 'l'
+'    РњР°РєСЂРѕСЃ СЂР°Р±РѕС‚Р°РµС‚ РІ РЅРµРјРѕРґР°Р»СЊРЅРѕРј СЂРµРґР°РєС‚РѕСЂРµ. РџРѕ Ctrl+O РЅРµ РїСЂРѕСЃС‚Рѕ РїРѕРєР°Р·С‹РІР°РµС‚ СЌРєСЂР°РЅ РєРѕРЅСЃРѕР»Рё, ' ..
+'Р° РїРµСЂРµРєР»СЋС‡Р°РµС‚ РІ СЃСЂРµРґСѓ РїР°РЅРµР»РµР№ Рё РіР°СЃРёС‚ РїРѕСЃР»РµРґРЅРёРµ. Р­С‚Рѕ РґР°С‘С‚ РІРѕР·РјРѕР¶РЅРѕСЃС‚СЊ РІРІРѕРґРёС‚СЊ РєРѕРјР°РЅРґС‹ ' ..
+'РІ РєРѕРјР°РЅРґРЅСѓСЋ СЃС‚СЂРѕРєСѓ.\n\n' ..
+'    Р’РѕР·РІСЂР°С‚ РІ СЂРµРґР°РєС‚РѕСЂ РѕСЃСѓС‰РµСЃС‚РІР»СЏРµС‚СЃСЏ РїРѕ РїРѕРІС‚РѕСЂРЅРѕРјСѓ Ctrl+O РёР»Рё РїРѕ Esc.\n\n' ..
+'    Р•СЃР»Рё РІ РёСЃС…РѕРґРЅРѕРј СЂРµРґР°РєС‚РѕСЂРµ РµСЃС‚СЊ РѕС‚РјРµС‡РµРЅРЅС‹Р№ С‚РµРєСЃС‚, С‚Рѕ РїРѕ РєР»Р°РІРёС€Рµ Ctrl+V РѕС‚РјРµС‡РµРЅРЅС‹Р№ С‚РµРєСЃС‚ '..
+'РІСЃС‚Р°РІР»СЏРµС‚СЃСЏ РІ РєРѕРјР°РЅРґРЅСѓСЋ СЃС‚СЂРѕРєСѓ.', 'EditorToCmdLine', nil, 'l'
    )
   end;
   --execute     = function(nfo,name) end;
@@ -45,12 +45,12 @@ if not nfo then return end
 
 local F = far.Flags
 local EdiStack = {}
------------------ Переключение на панели ------------------
+----------------- РџРµСЂРµРєР»СЋС‡РµРЅРёРµ РЅР° РїР°РЅРµР»Рё ------------------
 Macro{
   id="FD02076B-828F-475A-A19E-95B99199DE5D";
   area="Editor";
   key="CtrlO";
-  description="Командная строка в редакторе по Ctrl+O";
+  description="РљРѕРјР°РЅРґРЅР°СЏ СЃС‚СЂРѕРєР° РІ СЂРµРґР°РєС‚РѕСЂРµ РїРѕ Ctrl+O";
   flags="";
   condition = function(key, data)
    return not next(EdiStack) and band(far.AdvControl(F.ACTL_GETWINDOWINFO).Flags, F.WIF_MODAL) == 0
@@ -69,11 +69,11 @@ Macro{
    end
   end;
 }
------------------- Восстановление в редактор ------------------
+------------------ Р’РѕСЃСЃС‚Р°РЅРѕРІР»РµРЅРёРµ РІ СЂРµРґР°РєС‚РѕСЂ ------------------
 local function RestEdit()
-  -- 1. Восстановление видимости панелей
+  -- 1. Р’РѕСЃСЃС‚Р°РЅРѕРІР»РµРЅРёРµ РІРёРґРёРјРѕСЃС‚Рё РїР°РЅРµР»РµР№
   if EdiStack[#EdiStack].NeedOnOff then Keys"CtrlO" end
-  -- 2. Возврат к редактору
+  -- 2. Р’РѕР·РІСЂР°С‚ Рє СЂРµРґР°РєС‚РѕСЂСѓ
   local wi
   for i=1,far.AdvControl(F.ACTL_GETWINDOWCOUNT) do
    wi = far.AdvControl(F.ACTL_GETWINDOWINFO, i)
@@ -89,7 +89,7 @@ Macro{
   id="4AF3D4C8-5A89-40ED-8407-F7EBFAA3C416";
   area="Shell";
   key="CtrlO";
-  description="Восстановление редактора по CtrlO";
+  description="Р’РѕСЃСЃС‚Р°РЅРѕРІР»РµРЅРёРµ СЂРµРґР°РєС‚РѕСЂР° РїРѕ CtrlO";
   condition=function(key, data) return not not next(EdiStack) end;
   action=function(data)
    RestEdit()
@@ -100,7 +100,7 @@ Macro{
   id="379D0E92-9830-4C03-A22D-483CCD042C36";
   area="Shell";
   key="Esc";
-  description="Восстановление редактора по Esc";
+  description="Р’РѕСЃСЃС‚Р°РЅРѕРІР»РµРЅРёРµ СЂРµРґР°РєС‚РѕСЂР° РїРѕ Esc";
   flags="EmptyCommandLine";
   priority = 99;
   condition=function(key, data) return not not next(EdiStack) end;
@@ -108,11 +108,11 @@ Macro{
    RestEdit()
   end;
 }
------------------ Обработка закрытия редактора --------------------------
+----------------- РћР±СЂР°Р±РѕС‚РєР° Р·Р°РєСЂС‹С‚РёСЏ СЂРµРґР°РєС‚РѕСЂР° --------------------------
 Event {
   id = "AA556FB4-5DF7-42D4-8CD6-DD177A725A7F";
   group       = "EditorEvent";
-  description = "Закрытие редактора";
+  description = "Р—Р°РєСЂС‹С‚РёРµ СЂРµРґР°РєС‚РѕСЂР°";
   condition = function(EditorID, Event, Param)
    return Event==F.EE_CLOSE
   end;
@@ -126,8 +126,8 @@ Event {
    end
   end;
 }
-------------- Вставка отмеченного в комстроку -------------
--- Функция получения строки отмеченного
+------------- Р’СЃС‚Р°РІРєР° РѕС‚РјРµС‡РµРЅРЅРѕРіРѕ РІ РєРѕРјСЃС‚СЂРѕРєСѓ -------------
+-- Р¤СѓРЅРєС†РёСЏ РїРѕР»СѓС‡РµРЅРёСЏ СЃС‚СЂРѕРєРё РѕС‚РјРµС‡РµРЅРЅРѕРіРѕ
 local function GetSel(EdId)
  local aSel = editor.GetSelection(EdId)
  if not aSel then return end
@@ -156,7 +156,7 @@ Macro{
   id="5D5C23EA-097D-4416-A8F6-B448AD491111";
   area="Shell";
   key="AltC";
-  description="Вставка отмеченного из редактора в комстроку";
+  description="Р’СЃС‚Р°РІРєР° РѕС‚РјРµС‡РµРЅРЅРѕРіРѕ РёР· СЂРµРґР°РєС‚РѕСЂР° РІ РєРѕРјСЃС‚СЂРѕРєСѓ";
   flags="";
   condition=function(key, data)
    if next(EdiStack) then
