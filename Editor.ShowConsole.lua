@@ -1,3 +1,12 @@
+--
+-- This macro emulates Midnight Commander Editor Ctrl+O shortcut.
+-- 
+-- When pressed out of Editor it opens the Console, so you can enter any command.
+-- To return back to the Editor, press Ctrl+O again
+--
+--
+--
+
 local F = far.Flags
 local EdiStack = {}
 ----------------- Переключение на панели ------------------
